@@ -17,6 +17,8 @@ massive(process.env.
   // adding a .catch
   .catch(err => console.log(err));
 
+app.use(express.json());
+
 app.get('/api/products', products_controller.getAll);
 app.get('/api/products/:id', products_controller.getOne);
 app.put('/api/products/:id', products_controller.update);

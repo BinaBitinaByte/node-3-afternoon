@@ -5,3 +5,4 @@ INSERT INTO product (
     image_url 
     ) 
     VALUES ( $1, $2, $3, $4 );
+

@@ -11,6 +11,7 @@ module.exports = {
     },
 
     getOne: (req, res, next) => {
+        
         let dbInstance = req.app.get('db');
         const { id } = req.params;
 
@@ -37,7 +38,7 @@ module.exports = {
         const { params, query } = req;
 
         dbInstance.update_product([params.id, query.desc])
-            .then(() => res.status(200).json)
+            .then(() => res.sendStatus(200).json)
         .catch( err => {
             res.status(500).json({error: "S** happens! Come back when things are working"})
             console.log(err)
@@ -48,7 +49,7 @@ module.exports = {
         const { id } = req.params;
 
         dbInstance.delete_product(id)
-            .then(() => res.status(200).json)
+            .then(() => res.sendStatus(200).json)
         .catch( err => {
             res.status(500).json({error: "S** happens! Come back when things are working"})
             console.log(err)
